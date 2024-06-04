@@ -1,0 +1,2 @@
+mod deoxys;
+mod pathfinder;

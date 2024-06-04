@@ -1,0 +1,36 @@
+[package]
+authors = ["Antiyro <https://github.com/antiyro>"]
+description = "A Starknet merkle-patricia-trie root benchmark tool"
+edition = "2021"
+homepage = "https://github.com/antiyro/starkroot"
+license = "MIT"
+name = "starkroot"
+publish = false
+repository = "https://github.com/antiyro/starkroot"
+version = "0.1.0"
+
+[dependencies]
+# General dependencies
+
+
+# Deoxys dependencies
+anyhow = "1.0.75"
+rayon = "1.10.0"
+bitvec = "1.0.1"
+starknet-types-core = { version = "0.1", default-features = false, features = [
+  "hash",
+  "parity-scale-codec",
+] }
+bonsai-trie = { default-features = false, git = "https://github.com/keep-starknet-strange/bonsai-trie.git", branch = "oss", features = [
+  "std",
+] }
+blockifier = { git = "https://github.com/kasarlabs/blockifier", branch = "feature/scale-codec-v6" }
+starknet_api = { git = "https://github.com/kasarlabs/starknet-api", branch = "feature/scale-codec", features = [
+  "testing",
+  "parity-scale-codec",
+] }
+
+# Pathfinder dependencies
+pathfinder-storage = { git = "https://github.com/eqlabs/pathfinder", tag = "v0.12.0"}
+pathfinder-crypto = { git = "https://github.com/eqlabs/pathfinder", tag = "v0.12.0" }
+pathfinder-common = { git = "https://github.com/eqlabs/pathfinder", tag = "v0.12.0" }
